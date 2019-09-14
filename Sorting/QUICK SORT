@@ -1,0 +1,40 @@
+import java.util.*;
+class QuickSort {
+    static int doPartition(int left,int right,int arr[]) {
+        int pivote=arr[right];
+        int swapindex=left;
+        for(int i=left;i<right;i++){
+            if(arr[i]<=pivote){
+                int temp=arr[swapindex];
+                arr[swapindex]=arr[i];
+                arr[i]=temp;
+                swapindex++;
+            }
+        }
+        arr[right]=arr[swapindex];
+        arr[swapindex]=pivote;
+        return swapindex;
+    }
+    static void doQuickSort(int left,int right,int arr[]) {
+        if(left>=right)
+            return ;
+        int pivoteindex=doPartition(left,right,arr);
+        doQuickSort(left,pivoteindex-1,arr);
+        doQuickSort(pivoteindex+1,right,arr);
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the array Size");
+        int n=sc.nextInt();
+        System.out.println("enter the elements in array");
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        doQuickSort(0,n-1,arr);
+        System.out.println("Sorted Array is :");
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
