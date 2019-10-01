@@ -1,8 +1,8 @@
 /* 
-  
+
   Selecting the min element or max element from the array put the element in the correct place ( front if that is min / back if that is max )
   
-  */
+*/
 
 
 import java.util.Scanner;
