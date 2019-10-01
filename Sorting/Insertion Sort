@@ -1,7 +1,7 @@
 /*
   Take the elements from second to end 
-  go to the left up to elements that are grater than the taken one while going left shift the elements to right 
-  place the taken element when ablve condition fails
+  From taken element position go to the left, up to elements that are grater than the taken one, while going left shift the elements to right 
+  place the taken element when above condition fails.
  */
  
  
